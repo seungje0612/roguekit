@@ -34,10 +34,10 @@ jobs:
         uses: Swatinem/rust-cache@v2
       - name: Build project
         if: ${{ env.SONAR_TOKEN != '' }}
-        run: cargo build
+        run: cargo build --workspace
       - name: Generate coverage report
         if: ${{ env.SONAR_TOKEN != '' }}
-        run: cargo tarpaulin --out Lcov --output-dir coverage
+        run: cargo tarpaulin --workspace --out Lcov --output-dir coverage
       - name: Skip scan when SONAR_TOKEN is missing
         if: ${{ env.SONAR_TOKEN == '' }}
         run: echo "SONAR_TOKEN is not configured. Skipping SonarCloud scan."
