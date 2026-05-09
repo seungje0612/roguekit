@@ -106,7 +106,7 @@ impl Point3 {
     #[must_use]
     #[allow(clippy::cast_precision_loss)]
     #[allow(clippy::cast_possible_truncation)]
-    pub fn to_vec3(&self) -> Vec3 {
+    pub fn to_vec3(self) -> Vec3 {
         Vec3::new(self.x as f32, self.y as f32, self.z as f32)
     }
 
