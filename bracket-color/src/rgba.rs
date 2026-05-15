@@ -623,7 +623,12 @@ mod tests {
     #[test]
     fn as_rgba_f32_returns_components_for_bevy() {
         let rgba = RGBA::from_f32(0.25, 0.5, 0.75, 0.125);
-        assert_eq!(rgba.as_rgba_f32(), [0.25, 0.5, 0.75, 0.125]);
+        let [r, g, b, a] = rgba.as_rgba_f32();
+
+        assert_approx_eq(r, 0.25);
+        assert_approx_eq(g, 0.5);
+        assert_approx_eq(b, 0.75);
+        assert_approx_eq(a, 0.125);
     }
 
     #[cfg(feature = "bevy")]
