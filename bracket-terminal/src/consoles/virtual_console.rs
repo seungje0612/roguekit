@@ -3,7 +3,7 @@
 
 use crate::prelude::{
     BTerm, CharacterTranslationMode, ColoredTextSpans, Console, DrawBatch, FontCharType, TextAlign,
-    Tile,  XpLayer, string_to_cp437, to_cp437,
+    Tile, string_to_cp437, to_cp437,
 };
 use bracket_color::prelude::*;
 use bracket_geometry::prelude::{Point, Rect};

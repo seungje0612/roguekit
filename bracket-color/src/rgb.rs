@@ -1,4 +1,4 @@
-use crate::prelude::{XpColor, HSV, RGBA};
+use crate::prelude::{HSV, RGBA, XpColor};
 use std::convert::From;
 use std::ops;
 

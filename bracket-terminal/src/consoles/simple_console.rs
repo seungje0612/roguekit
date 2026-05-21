@@ -1,5 +1,5 @@
 use crate::prelude::{
-    CharacterTranslationMode, ColoredTextSpans, Console, FontCharType, TextAlign, Tile, XpLayer,
+    CharacterTranslationMode, ColoredTextSpans, Console, FontCharType, TextAlign, Tile,
     string_to_cp437, to_cp437,
 };
 use bracket_color::prelude::*;
