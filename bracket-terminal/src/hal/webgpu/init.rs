@@ -15,13 +15,13 @@ pub fn init_raw<S: ToString>(
     platform_hints: InitHints,
 ) -> BResult<BTerm> {
     let mut scaler = ScreenScaler::new(platform_hints.desired_gutter, width_pixels, height_pixels);
-    let el = EventLoop::new();
+    let el = EventLoop::new()?;
     let wb = Window::default_attributes()
         .with_title(window_title.to_string())
         .with_min_inner_size(scaler.new_window_size())
         .with_inner_size(scaler.new_window_size());
 
-    let window = el.create_window(wb).unwrap();
+    let window = el.create_window(wb)?;
 
     let (instance, surface, adapter, device, queue, config) =
         pollster::block_on(init_adapter(&window));
